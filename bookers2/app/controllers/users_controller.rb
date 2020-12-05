@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @user = User.all
+    @users = User.all
     @book = Book.new
   end
 
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
+    user = User.find(params[:id])
+    user.update(user_params)
     redirect_to user_path(@user.id)
   end
 
