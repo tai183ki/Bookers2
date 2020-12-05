@@ -2,6 +2,7 @@
 <main>
   <div>
     <h2>User Info</h2>
+    <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", size: "100x100" %>
 
     <table>
       <tbody>
@@ -17,7 +18,8 @@
         </tr>
       </tbody>
     </table>
-    
+      <p><%= link_to "Edit", edit_user_path(current_user) %></p>
+
   </div>
 
   <div>
